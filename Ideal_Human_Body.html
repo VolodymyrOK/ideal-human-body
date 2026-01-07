@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" 
+          integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <title>Вычисление идеальных антропометрических характеристик тела человека</title>
+    <style>
+        body {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+        h2 {
+            text-align: center;
+        }
+        #but {
+            font-size: 28px;
+            background: #55aa55;
+            color: #fff;
+            padding: 10px;
+            margin: 50px auto;
+            font-family: Arial;
+            border-radius: 11px 20px;
+            box-shadow: 7px 7px 20px rgba(0,0,0,0.7);
+            outline: none;
+            letter-spacing: 1px;
+        }
+    </style>
+
+    <script>
+
+        function Body_Human() {
+
+            var Name = prompt("Введите Ваше имя: ");
+            var Gender = prompt("Введите Ваш пол, м/ж: ");
+
+            var Height = prompt("Введите Ваш рост, см: ");
+            var Mass = prompt("Введите Ваш фактический вес, кг: ");
+            var Age = prompt("Введите Ваш возраст: ");
+
+            //console.log("Имя: " + Name);
+            //console.log("Рост: " + Height + " см");
+            //console.log("Вес: " + Mass + " кг");
+            //console.log("Возраст: " + Age + " лет");
+            //console.log("Пол: " + ((Gender == "м") ? "мужской" : "женский"));
+
+            document.write("Имя: " + Name.bold().fontsize(4) + "<br>");
+            document.write("Рост: " + Height.bold().fontsize(4) + " см<br>");
+            document.write("Вес: " + Mass.bold().fontsize(4) + " кг<br>");
+            document.write("Возраст: " + Age.bold().fontsize(4) + " лет<br>");
+            document.write("Пол: " + ((Gender == "м") ? "мужской" : "женский").bold().fontsize(4) + "<br><br>");
+
+
+            if (Gender == "ж") {
+                var Ideal_Mass = (Height * 3 - 450 + Number(Age)) * 0.225 + 40.5;
+                var Fat_Percentage = (Mass - Ideal_Mass) * 100 / Mass + 22;
+            }
+            else //if (Gender == "м")
+            {
+                var Ideal_Mass = (Height * 3 - 450 + +Age) / 4 + 45;
+                var Fat_Percentage = (Mass - Ideal_Mass) * 100 / Mass + 15;
+            }
+
+            var Fat_Kg = (Mass * Fat_Percentage) / 100;
+            var Water = 0.732 * Ideal_Mass;
+            var Body_Density = (0.89 * Fat_Percentage + 1.1 * (100 - Fat_Percentage)) / 100;
+            var Body_Volume = Mass / (Body_Density * 1000);
+            var y = (35.75 - Math.log10(Mass)) / 53.2;
+            var Skin_Area = (Math.pow((1000 * Mass), y) * Math.pow(Height, 0.3)) / 3118.2;
+
+            //console.log("Ваша идеальная масса тела равна: " + Ideal_Mass.toFixed(2));
+            //console.log("В Вашем теле содержится " + Fat_Percentage.toFixed(2) + " % жира");  
+            //console.log("В Вашем теле содержится " + Fat_Kg.toFixed(2) + " кг жира");
+            //console.log("В Вашем теле содержится " + Water.toFixed(2) + " кг воды");
+            //console.log("Средняя плотность Вашего тела " + Body_Density.toFixed(3) + " г/см*3");
+            //console.log("Объем Вашего тела " + Body_Volume.toFixed(3) + " м*3");
+            //console.log("Площадь кожных покровов Вашего тела " + Skin_Area.toFixed(2) + " м*2");
+
+
+            document.write("Ваша идеальная масса тела равна: " + Ideal_Mass.toFixed(2).bold().fontsize(4).fontcolor("red") + " кг<br>");
+            document.write("В Вашем теле содержится " + Fat_Percentage.toFixed(2).bold().fontsize(4).fontcolor("red") + " % жира<br>");
+            document.write("В Вашем теле содержится " + Fat_Kg.toFixed(2).bold().fontsize(4).fontcolor("red") + " кг жира<br>");
+            document.write("В Вашем теле содержится " + Water.toFixed(2).bold().fontsize(4).fontcolor("red") + " кг воды<br>");
+            document.write("Средняя плотность Вашего тела " + Body_Density.toFixed(3).bold().fontsize(4).fontcolor("red") + " г/см" + "3".sup() + "<br>");
+            document.write("Объем Вашего тела " + Body_Volume.toFixed(3).bold().fontsize(4).fontcolor("red") + " м" + "3".sup() + "<br>");
+            document.write("Площадь кожных покровов Вашего тела " + Skin_Area.toFixed(2).bold().fontsize(4).fontcolor("red") + " м" + "2".sup() + "<br>");
+        }
+
+    </script>
+</head>
+<body>
+    <h2 class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">Вычисление идеальных антропометрических характеристик тела человека</h2>
+    <input id="but" type="button" onclick="Body_Human()" value="Расчет!" />
+</body>
+</html>

@@ -84,7 +84,7 @@ class App extends Component {
         }}
       >
         <div className="container">
-          <Header>Проектик для тренировок (HTML, CSS, JS, REACT, GIT)</Header>
+          <Header>Проектик для тренировок (HTML, CSS, JS, REACT)</Header>
           <Main>
             {isShowMainPage && (
               <MainPage

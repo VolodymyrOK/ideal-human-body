@@ -6,7 +6,6 @@ export const NotFoundPage = () => {
     <div>
       <div className={styles.notFoundContainer}>
         <h1>404 - Страница не найдена</h1>
-        <p>Мы не можем найти страницу, которую вы ищете.</p>
         <img src={errorImage} alt="errorImage" width="350" />
       </div>
     </div>

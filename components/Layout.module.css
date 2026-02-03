@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  text-align: center;
+  background-color: darkcyan;
+  padding: 10px;
+  color: white;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.footer {
+  text-align: center;
+  background-color: darkcyan;
+  padding: 10px;
+  color: white;
+}

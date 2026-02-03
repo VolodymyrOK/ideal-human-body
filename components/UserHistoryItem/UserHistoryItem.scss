@@ -1,0 +1,62 @@
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  align-items: center;
+  border-bottom: 1px solid #aaa;
+}
+
+.data-line {
+  display: flex;
+  justify-content: space-between;
+  width: 124px;
+  &.time {
+    display: flex;
+    flex-direction: column;
+    & > span:first-child {
+      font-size: 11px;
+    }
+  }
+}
+
+.title-line {
+  color: black;
+}
+
+span.class-name {
+  width: 120px;
+  color: rgb(44, 46, 46);
+}
+
+span.class-weight,
+.class-height {
+  width: 20px;
+  color: rgb(44, 46, 46);
+}
+
+span.class-age {
+  width: 10px;
+  color: rgb(44, 46, 46);
+}
+
+span.class-gender {
+  width: 24px;
+  color: green;
+}
+
+span.class-data {
+  width: 78px;
+  color: brown;
+}
+
+.button {
+  text-align: right;
+  color: white;
+  cursor: pointer;
+  &.button-ok {
+    background-color: green;
+  }
+  &.button-del {
+    background-color: red;
+  }
+}

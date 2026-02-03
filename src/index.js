@@ -5,7 +5,7 @@ import App from './components/App'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter>
+    <BrowserRouter basename="/ideal-human-body">
       <App />
     </BrowserRouter>
   </React.StrictMode>,

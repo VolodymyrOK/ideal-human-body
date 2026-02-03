@@ -8,7 +8,7 @@ import UsersHistoryList from './UsersHistoryList/UsersHistoryList'
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout />}>
+      <Route path="/ideal-human-body" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path="/formdata" element={<EnterUserData />} />
         <Route path="/history" element={<UsersHistoryList />} />

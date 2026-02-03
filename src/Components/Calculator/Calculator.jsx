@@ -29,6 +29,7 @@ class Calculator {
     bodyVolume = +weight / (bodyDensity * 1000)
     let y = (35.75 - Math.log10(+weight)) / 53.2
     skinArea = (Math.pow(1000 * +weight, y) * Math.pow(+height, 0.3)) / 3118.2
+
     return {
       name,
       idealMass,

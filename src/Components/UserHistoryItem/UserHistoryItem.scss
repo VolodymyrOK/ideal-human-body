@@ -1,5 +1,4 @@
 .list-item {
-  margin-bottom: 15px;
   display: flex;
   justify-content: space-between;
   gap: 18px;
@@ -21,25 +20,23 @@
 }
 
 .title-line {
-  margin-right: 10px;
-  margin-bottom: 5px;
   color: black;
 }
 
 span.class-name {
   width: 120px;
-  color: darkslategrey;
+  color: rgb(44, 46, 46);
 }
 
 span.class-weight,
 .class-height {
   width: 20px;
-  color: chocolate;
+  color: rgb(44, 46, 46);
 }
 
 span.class-age {
   width: 10px;
-  color: crimson;
+  color: rgb(44, 46, 46);
 }
 
 span.class-gender {

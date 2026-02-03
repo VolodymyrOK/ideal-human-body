@@ -1,6 +1,17 @@
 import { Field, Form } from 'formik'
 import styled from 'styled-components'
 
+export const DivContainer = styled.div`
+  width: 700px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+`
+
 export const FormTitle = styled.h1`
   margin-bottom: 22px;
   width: 100%;
@@ -10,7 +21,10 @@ export const FormContainer = styled(Form)`
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
+  & label:last-of-type {
+    margin-bottom: 15px;
+  }
 `
 
 export const FormLabel = styled.label`

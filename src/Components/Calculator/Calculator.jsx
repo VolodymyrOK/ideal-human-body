@@ -1,5 +1,14 @@
 class Calculator {
-  static calculate = ({ weight, height, age, gender }) => {
+  static calculate = ({
+    name,
+    weight,
+    height,
+    age,
+    gender,
+    time,
+    date,
+    id,
+  }) => {
     let idealMass,
       fatPercentage,
       fatKg,
@@ -21,6 +30,7 @@ class Calculator {
     let y = (35.75 - Math.log10(+weight)) / 53.2
     skinArea = (Math.pow(1000 * +weight, y) * Math.pow(+height, 0.3)) / 3118.2
     return {
+      name,
       idealMass,
       fatPercentage,
       fatKg,
@@ -28,6 +38,13 @@ class Calculator {
       bodyDensity,
       bodyVolume,
       skinArea,
+      time,
+      date,
+      id,
+      weight,
+      height,
+      age,
+      gender,
     }
   }
 }

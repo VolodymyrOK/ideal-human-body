@@ -5,12 +5,13 @@ import './UserHistoryItem.scss'
 
 const UserHistoryItem = ({
   data,
-  handleDelete,
   handleAccept,
-  isShowModalResult,
-  toggleModalResult,
+  handleDelete,
   dataCalc,
+  isShowModal,
+  toggleModal,
 }) => {
+  console.log('dataCalc', dataCalc)
   return (
     <>
       <li className="list-item">
@@ -62,11 +63,11 @@ const UserHistoryItem = ({
           </button>
         </div>
       </li>
-      {isShowModalResult && (
+      {isShowModal && (
         <div>
-          <Modal onClose={toggleModalResult}>
+          <Modal onClose={toggleModal}>
             <Result result={dataCalc} />
-            <Button onClick={toggleModalResult}>Закрыть</Button>
+            <Button onClick={toggleModal}>Закрыть</Button>
           </Modal>
         </div>
       )}

@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/ideal-human-body/static/css/main.fdf2f27d.css",
-    "main.js": "/ideal-human-body/static/js/main.d87e90c3.js",
+    "main.js": "/ideal-human-body/static/js/main.35d3de21.js",
     "static/media/funart.jpg": "/ideal-human-body/static/media/funart.6c8692f51daa24221584.jpg",
     "static/media/404.gif": "/ideal-human-body/static/media/404.8781aa4951ba64e3deee.gif",
     "index.html": "/ideal-human-body/index.html",
     "main.fdf2f27d.css.map": "/ideal-human-body/static/css/main.fdf2f27d.css.map",
-    "main.d87e90c3.js.map": "/ideal-human-body/static/js/main.d87e90c3.js.map"
+    "main.35d3de21.js.map": "/ideal-human-body/static/js/main.35d3de21.js.map"
   },
   "entrypoints": [
     "static/css/main.fdf2f27d.css",
-    "static/js/main.d87e90c3.js"
+    "static/js/main.35d3de21.js"
   ]
 }

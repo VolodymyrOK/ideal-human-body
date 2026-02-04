@@ -11,7 +11,7 @@ export const DivContainer = styled.div`
   left: 50%;
   transform: translate(-50%, -50%);
 
-  @media (min-width: 362px) and (max-width: 680px) {
+  @media (max-width: 360px) {
     min-width: 362px;
     display: flex;
     flex-direction: column;

@@ -14,3 +14,11 @@ h1 {
   color: rgb(27, 20, 88);
   text-align: center;
 }
+
+@media (min-width: 362px) and (max-width: 680px) {
+  h1 {
+    width: 368px;
+
+    margin: 50px auto 0;
+  }
+}

@@ -26,3 +26,15 @@ span {
   font-size: 14px;
   color: black;
 }
+
+@media (min-width: 362px) and (max-width: 680px) {
+  .container-result {
+    flex-direction: column;
+    width: 254px;
+    margin: 0px auto;
+    gap: 8px;
+  }
+  h2 {
+    margin: 68px auto 10px;
+  }
+}

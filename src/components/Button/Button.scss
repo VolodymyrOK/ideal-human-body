@@ -24,3 +24,9 @@
     background-color: rgb(204, 203, 203);
   }
 }
+
+@media (min-width: 362px) and (max-width: 680px) {
+  .button-component {
+    margin-top: 10px;
+  }
+}

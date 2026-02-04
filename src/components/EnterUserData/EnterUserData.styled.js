@@ -10,11 +10,17 @@ export const DivContainer = styled.div`
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+
+  @media (min-width: 362px) and (max-width: 680px) {
+    min-width: 362px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
 `
 
 export const FormTitle = styled.h1`
   margin-bottom: 22px;
-  width: 100%;
 `
 
 export const FormContainer = styled(Form)`

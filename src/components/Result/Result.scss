@@ -38,3 +38,9 @@ span {
     margin: 0 auto 15px;
   }
 }
+
+@media (max-width: 420px) {
+  .container-result {
+    gap: 40px;
+  }
+}

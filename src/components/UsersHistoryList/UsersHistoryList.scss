@@ -38,11 +38,15 @@ h1 {
   }
 }
 
-// @media (min-width: 768px) {
-//   h1 {
-//     margin: 20px auto 0;
-//   }
-// }
+@media (min-width: 768px) {
+  h1 {
+    margin: 20px auto 0;
+  }
+  li div:nth-child(n + 2):nth-child(-n + 5) {
+    display: block;
+  }
+}
+
 // @media (min-width: 1092px) {
 //   h1 {
 //     width: 800px;

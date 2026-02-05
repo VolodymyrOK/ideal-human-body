@@ -11,33 +11,32 @@ const UserHistoryItem = ({
   isShowModal,
   toggleModal,
 }) => {
-  console.log('dataCalc', dataCalc)
   return (
     <>
       <li className="list-item">
-        <div className="data-line">
+        <div className="data-line span-line">
           <span className="title-line">Имя:</span>
           <span className="class-name">{data.name}</span>
         </div>
-        <div className="data-line">
+        <div className="data-line span-line">
           <span className="title-line">Вес:</span>
           <span className="class-weight">{data.weight}</span>
         </div>
-        <div className="data-line">
+        <div className="data-line span-line">
           <span className="title-line">Рост:</span>
           <span className="class-height">{data.height}</span>
         </div>
-        <div className="data-line">
+        <div className="data-line span-line">
           <span className="title-line">Возраст:</span>
           <span className="class-age">{data.age}</span>
         </div>
-        <div className="data-line">
+        <div className="data-line span-line">
           <span className="title-line">Пол:</span>
           <span className="class-gender">
             {data.gender === 'male' ? 'муж.' : 'жен.'}
           </span>
         </div>
-        <div className="data-line time">
+        <div className="data-line time span-line">
           <span className="title-line">Дата/Время</span>
           <span className="class-data">{data.date}</span>
           <span className="class-data">{data.time}</span>

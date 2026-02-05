@@ -2,7 +2,6 @@ import Button from '../Button'
 import './Result.scss'
 
 const Result = ({ result, returnEnterData, userData }) => {
-  console.log('result', result)
   const {
     name,
     idealMass,
@@ -20,7 +19,7 @@ const Result = ({ result, returnEnterData, userData }) => {
     gender,
   } = result
   return (
-    <div className="result">
+    <>
       <h2>Результаты расчета</h2>
       <div className="container-result">
         <div className="data-start">
@@ -89,7 +88,7 @@ const Result = ({ result, returnEnterData, userData }) => {
           Вернуться к вводу данных
         </Button>
       )}
-    </div>
+    </>
   )
 }
 

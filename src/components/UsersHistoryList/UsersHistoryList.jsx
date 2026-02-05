@@ -8,15 +8,22 @@ import Calculator from '../Calculator/Calculator'
 const UsersHistoryList = () => {
   const [dataList, setDataList] = useLocaleStorage(USER_DATA)
   const [isShowModal, setIsShowModal] = useState(false)
+  const [activeItemId, setActiveItemId] = useState()
   const [dataCalc, setDataCalc] = useState([])
 
-  const handleAccept = (data) => {
+  const handleAcceptItem = (data) => {
+    setActiveItemId(data.id)
+    setIsShowModal(true)
     setDataCalc(() => Calculator.calculate(data))
-    toggleModal()
   }
 
-  const toggleModal = () => {
-    setIsShowModal((isShowModal) => !isShowModal)
+  const toggleModal = (itemId) => {
+    if (activeItemId === itemId) {
+      setIsShowModal(!isShowModal)
+    } else {
+      setActiveItemId(itemId)
+      setIsShowModal(true)
+    }
   }
 
   const handleDelete = (id) => {
@@ -32,10 +39,10 @@ const UsersHistoryList = () => {
             <UserHistoryItem
               key={data.id}
               data={data}
-              handleAccept={() => handleAccept(data)}
+              handleAccept={handleAcceptItem}
               handleDelete={() => handleDelete(data.id)}
-              isShowModal={isShowModal}
-              toggleModal={toggleModal}
+              isShowModal={isShowModal && activeItemId === data.id}
+              toggleModal={() => toggleModal(data.id)}
               dataCalc={dataCalc}
             />
           ))}

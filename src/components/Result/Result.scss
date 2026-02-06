@@ -27,7 +27,7 @@ span {
   color: black;
 }
 
-@media (min-width: 420px) and (max-width: 609px) {
+@media (max-width: 360px) {
   .container-result {
     flex-direction: column;
     width: 254px;

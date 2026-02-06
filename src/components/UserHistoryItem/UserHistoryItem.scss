@@ -64,3 +64,9 @@ span.class-data {
     background-color: red;
   }
 }
+
+@media (max-width: 360px) {
+  .list-item {
+    gap: 8px;
+  }
+}

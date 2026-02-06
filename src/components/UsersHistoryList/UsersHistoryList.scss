@@ -16,7 +16,7 @@ h1 {
   font-weight: bold;
 }
 
-@media (min-width: 420px) {
+@media (max-width: 360px) {
   ul {
     width: 100px;
     margin-left: 50px;

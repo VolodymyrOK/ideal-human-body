@@ -12,7 +12,7 @@ export const DivContainer = styled.div`
   transform: translate(-50%, -50%);
 
   @media (max-width: 360px) {
-    min-width: 362px;
+    min-width: 348px;
     display: flex;
     flex-direction: column;
     gap: 10px;

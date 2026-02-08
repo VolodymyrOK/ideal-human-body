@@ -24,7 +24,7 @@ function Navigation() {
         История пользователей
       </NavLink>
       <NavLink
-        to="/Данные пользователей"
+        to="/usersdata"
         className={({ isActive }) => (isActive ? styles.active : styles.norm)}
       >
         Данные пользователей

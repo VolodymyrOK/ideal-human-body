@@ -20,7 +20,7 @@ const Result = ({ result, returnEnterData, userData }) => {
   } = result
   return (
     <>
-      <h2>Результаты расчета</h2>
+      <h2 className="h2-result">Результаты расчета</h2>
       <div className="container-result">
         <div className="data-start">
           <p className="line-result">

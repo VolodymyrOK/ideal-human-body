@@ -46,3 +46,9 @@
     max-width: 600px;
   }
 }
+
+@media (max-height: 420px) {
+  .modal-content {
+    max-height: 280px;
+  }
+}

@@ -1,4 +1,4 @@
-h2 {
+.h2-result {
   text-align: center;
   color: #2e2d2d;
   margin: 15px auto 18px;
@@ -34,7 +34,7 @@ span {
     margin: 0px auto 15px;
     gap: 8px;
   }
-  h2 {
+  .h2-result {
     margin: 0 auto 15px;
   }
 }
@@ -46,7 +46,20 @@ span {
     margin: 0px auto 15px;
     gap: 8px;
   }
-  h2 {
+  .h2-result {
     margin: 15px auto 15px;
+  }
+}
+
+@media (max-height: 420px) {
+  .modal-content {
+    max-height: 280px;
+  }
+  .h2-result {
+    margin: 0 auto;
+  }
+  .container-result {
+    margin-top: 8px;
+    margin-bottom: -8px;
   }
 }

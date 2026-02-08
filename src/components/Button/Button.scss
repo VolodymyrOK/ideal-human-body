@@ -31,3 +31,9 @@
     margin-bottom: 10px;
   }
 }
+
+@media (max-height: 490px) {
+  .button-component {
+    margin-bottom: 15px;
+  }
+}

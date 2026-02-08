@@ -10,6 +10,8 @@ const UsersHistoryList = () => {
   const [isShowModal, setIsShowModal] = useState(false)
   const [activeItemId, setActiveItemId] = useState()
   const [dataCalc, setDataCalc] = useState([])
+  const [isShowModalDelete, setIsShowModalDelete] = useState(false)
+  const [activeItemIdDelete, setActiveItemIdDelete] = useState()
 
   const handleAcceptItem = (data) => {
     setActiveItemId(data.id)
@@ -26,7 +28,21 @@ const UsersHistoryList = () => {
     }
   }
 
-  const handleDelete = (id) => {
+  const toggleModalDelete = (itemId) => {
+    if (activeItemIdDelete === itemId) {
+      setIsShowModalDelete(!isShowModalDelete)
+    } else {
+      setActiveItemIdDelete(itemId)
+      setIsShowModalDelete(true)
+    }
+  }
+
+  const handleDelete = (data) => {
+    setActiveItemIdDelete(data.id)
+    setIsShowModalDelete(true)
+  }
+
+  const recordDelete = (id) => {
     setDataList((prevState) => prevState.filter((dat) => dat.id !== id))
   }
 
@@ -39,10 +55,15 @@ const UsersHistoryList = () => {
             <UserHistoryItem
               key={data.id}
               data={data}
-              handleAccept={handleAcceptItem}
-              handleDelete={() => handleDelete(data.id)}
+              handleAccept={() => handleAcceptItem(data)}
+              handleDelete={() => handleDelete(data)}
               isShowModal={isShowModal && activeItemId === data.id}
+              isShowModalDelete={
+                isShowModalDelete && activeItemIdDelete === data.id
+              }
               toggleModal={() => toggleModal(data.id)}
+              toggleModalDelete={() => toggleModalDelete(data.id)}
+              handleRecordDelete={() => recordDelete(data.id)}
               dataCalc={dataCalc}
             />
           ))}

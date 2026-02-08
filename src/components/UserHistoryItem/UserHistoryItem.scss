@@ -64,3 +64,12 @@ span.class-data {
     background-color: red;
   }
 }
+
+.modal-content:has(.btn-block-delete) {
+  width: 300px;
+}
+
+.btn-block-delete {
+  display: flex;
+  margin: 0 auto;
+}

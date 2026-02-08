@@ -10,6 +10,9 @@ const UserHistoryItem = ({
   dataCalc,
   isShowModal,
   toggleModal,
+  toggleModalDelete,
+  isShowModalDelete,
+  handleRecordDelete,
 }) => {
   return (
     <>
@@ -46,7 +49,7 @@ const UserHistoryItem = ({
             type="button"
             className="button button-ok"
             title={`Повторить расчёт для ${data.name}`}
-            onClick={() => handleAccept(data)}
+            onClick={handleAccept}
           >
             ✔
           </button>
@@ -62,6 +65,16 @@ const UserHistoryItem = ({
           </button>
         </div>
       </li>
+      {isShowModalDelete && (
+        <div>
+          <Modal onClose={toggleModalDelete}>
+            <div className="btn-block-delete">
+              <Button onClick={handleRecordDelete}>Удалить {data.name}</Button>
+              <Button onClick={toggleModalDelete}>Отменить</Button>
+            </div>
+          </Modal>
+        </div>
+      )}
       {isShowModal && (
         <div>
           <Modal onClose={toggleModal}>

@@ -8,32 +8,8 @@
   transform: translate(-50%, -50%);
 }
 
-h1 {
-  width: 600px;
+.home-page-h1 {
   margin: 0 auto;
   color: rgb(27, 20, 88);
   text-align: center;
-}
-
-@media (max-width: 360px) {
-  h1 {
-    width: 360px;
-  }
-}
-@media (min-width: 610px) {
-  h1 {
-    width: 500px;
-    margin: 20px auto 0;
-  }
-}
-@media (min-width: 768px) {
-  h1 {
-    margin: 20px auto 0;
-  }
-}
-@media (min-width: 1092px) {
-  h1 {
-    width: 800px;
-    margin: 20px auto 0;
-  }
 }

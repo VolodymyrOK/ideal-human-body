@@ -1,11 +1,14 @@
 .history-container {
-  margin: 25px auto 0;
+  margin: 0 auto;
   text-align: center;
   max-width: 700px;
 }
 
-h1 {
-  margin-bottom: 10px;
+.history-h1 {
+  margin: 10px auto 10px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(27, 20, 88);
 }
 
 .data-null {
@@ -18,9 +21,8 @@ h1 {
 
 @media (max-width: 360px) {
   ul {
-    width: 100px;
-    margin-left: 50px;
-    margin-top: 25px;
+    width: 300px;
+    margin: 0 auto;
   }
 
   li div:nth-child(n + 2):nth-child(-n + 5) {
@@ -28,28 +30,24 @@ h1 {
   }
 }
 
-@media (min-width: 610px) {
-  h1 {
-    width: 500px;
-    margin: 20px auto 0;
+@media (min-width: 361px) and (max-width: 609px) {
+  ul {
+    width: 340px;
+    margin: 0 auto;
   }
-  li div:nth-child(n + 2):nth-child(-n + 4) {
-    display: block;
-  }
-}
 
-@media (min-width: 768px) {
-  h1 {
-    margin: 20px auto 0;
-  }
   li div:nth-child(n + 2):nth-child(-n + 5) {
-    display: block;
+    display: none;
   }
 }
 
-// @media (min-width: 1092px) {
-//   h1 {
-//     width: 800px;
-//     margin: 20px auto 0;
-//   }
-// }
+@media (min-width: 610px) and (max-width: 768px) {
+  ul {
+    width: 340px;
+    margin: 0 auto;
+  }
+
+  li div:nth-child(n + 2):nth-child(-n + 4) {
+    display: none;
+  }
+}

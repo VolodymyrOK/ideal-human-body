@@ -1,8 +1,36 @@
+.notFoundH1 {
+  width: 360px;
+  color: rgb(27, 20, 88);
+  margin: 0 auto;
+}
 .notFoundContainer {
   margin-top: 40px;
   text-align: center;
 }
 
 .notFoundContainer > img {
+  width: 350px;
   margin-top: 15px;
+}
+
+@media (max-width: 360px) {
+  .notFoundH1 {
+    width: 300px;
+  }
+  .notFoundContainer > img {
+    width: 300px;
+    margin-top: 15px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 609px) {
+  .notFoundH1 {
+    width: 360px;
+  }
+}
+
+@media (min-width: 610px) {
+  .notFoundH1 {
+    width: 420px;
+  }
 }

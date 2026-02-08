@@ -32,7 +32,7 @@ const UsersHistoryList = () => {
 
   return (
     <div className="history-container">
-      <h1>Данные пользователей</h1>
+      <h1 className="history-h1">Данные пользователей</h1>
       {dataList.length !== 0 ? (
         <ul>
           {dataList.map((data) => (

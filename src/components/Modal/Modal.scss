@@ -25,3 +25,24 @@
     0px 1px 1px 0px rgba(0, 0, 0, 0.14),
     0px 1px 3px 0px rgba(0, 0, 0, 0.12);
 }
+
+@media (max-width: 360px) {
+  .modal-content {
+    max-height: 500px;
+    max-width: 300px;
+  }
+}
+
+@media (min-width: 361px) and (max-width: 609px) {
+  .modal-content {
+    max-height: 520px;
+    max-width: 340px;
+  }
+}
+
+@media (min-width: 610px) and (max-width: 768px) {
+  .modal-content {
+    max-height: 320px;
+    max-width: 600px;
+  }
+}

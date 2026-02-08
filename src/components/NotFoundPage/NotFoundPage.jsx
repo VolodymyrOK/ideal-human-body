@@ -5,8 +5,8 @@ export const NotFoundPage = () => {
   return (
     <div>
       <div className={styles.notFoundContainer}>
-        <h1>404 - Страница не найдена</h1>
-        <img src={errorImage} alt="errorImage" width="350" />
+        <h1 className={styles.notFoundH1}>404 - Страница не найдена</h1>
+        <img src={errorImage} alt="errorImage" />
       </div>
     </div>
   )

@@ -2,7 +2,7 @@ import { Field, Form } from 'formik'
 import styled from 'styled-components'
 
 export const DivContainer = styled.div`
-  width: 700px;
+  /* width: 700px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -16,11 +16,14 @@ export const DivContainer = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
-  }
+  } */
 `
 
 export const FormTitle = styled.h1`
-  margin-bottom: 22px;
+  margin: 22px auto 22px;
+  padding: 10px;
+  text-align: center;
+  color: rgb(27, 20, 88);
 `
 
 export const FormContainer = styled(Form)`

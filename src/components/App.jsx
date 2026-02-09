@@ -4,11 +4,14 @@ import NotFoundPage from './NotFoundPage/NotFoundPage'
 import EnterUserData from './EnterUserData'
 import HomePage from './HomePage'
 import UsersHistoryList from './UsersHistoryList/UsersHistoryList'
-import { useState } from 'react'
+// import { useState } from 'react'
 import * as dataLang from '../language/languageData'
+import useLocaleStorage from '../hooks/useLocalStorage'
+import { LANGUAGE } from '../constans'
 
 function App() {
-  const [lang, setLang] = useState(dataLang.langDefault)
+  const [lang, setLang] = useLocaleStorage(LANGUAGE, dataLang.langDefault)
+  // const [lang, setLang] = useState(dataLang.langDefault)
 
   const handleLangChange = (newLang) => {
     setLang(newLang)

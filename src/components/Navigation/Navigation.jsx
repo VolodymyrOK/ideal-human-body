@@ -7,7 +7,7 @@ import 'flag-icons/css/flag-icons.min.css'
 function Navigation({ lang, handleLangChange }) {
   const { navFormdata, navHistory, navUsersdata } = GetDataLanguage(lang) || {}
   return (
-    <div class={styles.navContainer}>
+    <div className={styles.navContainer}>
       <nav className={styles.navigation}>
         <NavLink
           to="/"
@@ -34,19 +34,19 @@ function Navigation({ lang, handleLangChange }) {
           {navUsersdata}
         </NavLink>
       </nav>
-      <div class={styles.btnCountry}>
+      <div className={styles.btnCountry}>
         <span
-          class="fi fi-ru"
+          className="fi fi-ru"
           onClick={() => handleLangChange('ru')}
           title="Русский"
         ></span>
         <span
-          class="fi fi-gb"
+          className="fi fi-gb"
           onClick={() => handleLangChange('en')}
           title="English"
         ></span>
         <span
-          class="fi fi-de"
+          className="fi fi-de"
           onClick={() => handleLangChange('de')}
           title="Deutsch"
         ></span>

@@ -1,7 +1,32 @@
+import GetDataLanguage from '../../hooks/GetDataLanguage'
 import Button from '../Button'
 import './Result.scss'
 
-const Result = ({ result, returnEnterData, userData }) => {
+const Result = ({ result, returnEnterData, userData, lang }) => {
+  const {
+    h2Result,
+    nameResult,
+    weightResult,
+    heightResult,
+    formAge,
+    formGender,
+    dateResult,
+    timeResult,
+    idealMassResult,
+    fatPercentageResult,
+    fatKgResult,
+    waterResult,
+    bodyDensityResult,
+    bodyVolumeResult,
+    skinAreaResult,
+    returnDataEnter,
+    maleResult,
+    femaleResult,
+    kg,
+    cm,
+    gcm,
+    year,
+  } = GetDataLanguage(lang) || {}
   const {
     name,
     idealMass,
@@ -20,72 +45,88 @@ const Result = ({ result, returnEnterData, userData }) => {
   } = result
   return (
     <>
-      <h2 className="h2-result">Результаты расчета</h2>
+      <h2 className="h2-result">{h2Result}</h2>
       <div className="container-result">
         <div className="data-start">
           <p className="line-result">
-            <span>Имя:</span>
+            <span>{nameResult}</span>
             <span>{name}</span>
           </p>
           <p className="line-result">
-            <span>Фактический вес, кг:</span>
-            <span>{weight} кг</span>
+            <span>{weightResult}</span>
+            <span>
+              {weight} {kg}
+            </span>
           </p>
           <p className="line-result">
-            <span>Фактический рост, см:</span>
-            <span>{height} см</span>
+            <span>{heightResult}</span>
+            <span>
+              {height} {cm}
+            </span>
           </p>
           <p className="line-result">
-            <span>Возраст:</span>
-            <span>{age} лет</span>
+            <span>{formAge}</span>
+            <span>
+              {age} {year}
+            </span>
           </p>
           <p className="line-result">
-            <span>Пол:</span>
-            <span>{gender === 'male' ? 'мужской' : 'женский'}</span>
+            <span>{formGender}</span>
+            <span>
+              {gender === 'male' ? `${maleResult}` : `${femaleResult}`}
+            </span>
           </p>
           <p className="line-result">
-            <span>Дата:</span>
+            <span>{dateResult}</span>
             <span>{date}</span>
           </p>
           <p className="line-result">
-            <span>Время:</span>
+            <span>{timeResult}</span>
             <span>{time}</span>
           </p>
         </div>
         <div className="data-result">
           <p className="line-result">
-            <span>Идеальная масса тела:</span>
-            <span>{idealMass.toFixed(2)} кг</span>
+            <span>{idealMassResult}</span>
+            <span>
+              {idealMass.toFixed(2)} {kg}
+            </span>
           </p>
           <p className="line-result">
-            <span>Процент жира:</span>
+            <span>{fatPercentageResult}</span>
             <span>{fatPercentage.toFixed(2)} %</span>
           </p>
           <p className="line-result">
-            <span>Масса жира:</span>
-            <span>{fatKg.toFixed(2)} кг</span>
+            <span>{fatKgResult}</span>
+            <span>
+              {fatKg.toFixed(2)} {kg}
+            </span>
           </p>
           <p className="line-result">
-            <span>Масса воды:</span>
-            <span>{water.toFixed(2)} кг</span>
+            <span>{waterResult}</span>
+            <span>
+              {water.toFixed(2)} {kg}
+            </span>
           </p>
           <p className="line-result">
-            <span>Плотность тела:</span>
-            <span>{bodyDensity.toFixed(2)} г/см³</span>
+            <span>{bodyDensityResult}</span>
+            <span>
+              {bodyDensity.toFixed(2)} {gcm}
+            </span>
           </p>
           <p className="line-result">
-            <span>Объем тела:</span>
+            <span>{bodyVolumeResult}</span>
             <span>{bodyVolume.toFixed(2)} м³</span>
           </p>
           <p className="line-result">
-            <span>Площадь кожи:</span>
+            <span>{skinAreaResult}</span>
             <span>{skinArea.toFixed(2)} м²</span>
           </p>
         </div>
       </div>
       {userData && (
         <Button type="button" onClick={returnEnterData}>
-          Вернуться к вводу данных
+          {returnDataEnter}
         </Button>
       )}
     </>

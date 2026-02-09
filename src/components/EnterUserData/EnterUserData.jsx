@@ -17,6 +17,7 @@ import Calculator from '../Calculator/Calculator'
 import Button from '../Button'
 import { nanoid } from 'nanoid'
 import useLocaleStorage from '../../hooks/useLocalStorage'
+import GetDataLanguage from '../../hooks/GetDataLanguage'
 
 const userSchema = yup.object().shape({
   name: yup.string().min(2).max(15).required(),
@@ -37,7 +38,7 @@ const initialValues = {
   time: '',
 }
 
-const EnterUserData = () => {
+const EnterUserData = ({ lang }) => {
   const [dataUsersLS, setDataUsersLS] = useLocaleStorage(USER_DATA, [])
   const [userData, setUserData] = useState(null)
   const [result, setResult] = useState()
@@ -74,11 +75,23 @@ const EnterUserData = () => {
     )
   }
 
+  const {
+    formTitle,
+    formName,
+    formWeight,
+    formHeight,
+    formAge,
+    formGender,
+    formMale,
+    formFemale,
+    formSubmit,
+  } = GetDataLanguage(lang) || {}
+
   return (
     <DivContainer>
       {!userData && (
         <>
-          <FormTitle>Введите необходимые данные</FormTitle>
+          <FormTitle>{formTitle}</FormTitle>
           <Formik
             initialValues={initialValues}
             onSubmit={handleSubmit}
@@ -86,50 +99,51 @@ const EnterUserData = () => {
           >
             <FormContainer autoComplete="off">
               <FormLabel htmlFor="name">
-                Ваше имя
+                {formName}
                 <div>
                   <FormField type="text" name="name" />
                   <FormError name="name" />
                 </div>
               </FormLabel>
               <FormLabel htmlFor="weight">
-                Факт.вес, кг
+                {formWeight}
                 <div>
                   <FormField type="number" name="weight" />
                   <FormError name="weight" component="div" />
                 </div>
               </FormLabel>
               <FormLabel htmlFor="height">
-                Факт.рост, см
+                {formHeight}
                 <div>
                   <FormField type="number" name="height" />
                   <FormError name="height" component="div" />
                 </div>
               </FormLabel>
               <FormLabel htmlFor="age">
-                Возраст
+                {formAge}
                 <div>
                   <FormField type="number" name="age" />
                   <FormError name="age" component="div" />
                 </div>
               </FormLabel>
               <FormLabel htmlFor="gender">
-                Пол
+                {formGender}
                 <div>
                   <FormField type="radio" name="gender" value="male" />
-                  муж.
+                  {formMale}
                   <FormField type="radio" name="gender" value="female" />
-                  жен.
+                  {formFemale}.
                   <FormError name="gender" component="div" />
                 </div>
               </FormLabel>
-              <Button type="submit">Рассчитать</Button>
+              <Button type="submit">{formSubmit}</Button>
             </FormContainer>
           </Formik>
         </>
       )}
       {result && userData && (
         <Result
+          lang={lang}
           result={result}
           userData={userData}
           returnEnterData={handleReturn}

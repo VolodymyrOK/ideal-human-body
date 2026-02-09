@@ -4,7 +4,7 @@ import Footer from './Footer/Footer'
 import styles from './Layout.module.css'
 import bgImage from '../images/funart.jpg'
 
-function Layout() {
+function Layout({ lang, handleLangChange }) {
   return (
     <div
       className={styles.container}
@@ -13,7 +13,7 @@ function Layout() {
       }}
     >
       <header className={styles.header}>
-        <Navigation />
+        <Navigation lang={lang} handleLangChange={handleLangChange} />
       </header>
       <main className={styles.main}>
         <Outlet />

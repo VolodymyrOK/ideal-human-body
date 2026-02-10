@@ -2,6 +2,7 @@ import Result from '../Result'
 import Modal from '../Modal'
 import Button from '../Button'
 import './UserHistoryItem.scss'
+import GetDataLanguage from '../../hooks/GetDataLanguage'
 
 const UserHistoryItem = ({
   data,
@@ -13,34 +14,54 @@ const UserHistoryItem = ({
   toggleModalDelete,
   isShowModalDelete,
   handleRecordDelete,
+  lang,
 }) => {
+  const {
+    nameResult,
+    weightHistory,
+    heightHistory,
+    formAge,
+    formMale,
+    formFemale,
+    dateResult,
+    timeResult,
+    formGender,
+    repeatData,
+    deleteData,
+    btnDelete,
+    btnCancel,
+    btnClose,
+  } = GetDataLanguage(lang) || {}
+
   return (
     <>
       <li className="list-item">
         <div className="data-line span-line">
-          <span className="title-line">Имя:</span>
+          <span className="title-line">{nameResult}</span>
           <span className="class-name">{data.name}</span>
         </div>
         <div className="data-line span-line">
-          <span className="title-line">Вес:</span>
+          <span className="title-line">{weightHistory}</span>
           <span className="class-weight">{data.weight}</span>
         </div>
         <div className="data-line span-line">
-          <span className="title-line">Рост:</span>
+          <span className="title-line">{heightHistory}</span>
           <span className="class-height">{data.height}</span>
         </div>
         <div className="data-line span-line">
-          <span className="title-line">Возраст:</span>
+          <span className="title-line">{formAge}</span>
           <span className="class-age">{data.age}</span>
         </div>
         <div className="data-line span-line">
-          <span className="title-line">Пол:</span>
+          <span className="title-line">{formGender}</span>
           <span className="class-gender">
-            {data.gender === 'male' ? 'муж.' : 'жен.'}
+            {data.gender === 'male' ? `${formMale}` : `${formFemale}`}
           </span>
         </div>
         <div className="data-line time span-line">
-          <span className="title-line">Дата/Время</span>
+          <span className="title-line">
+            {dateResult}/{timeResult}
+          </span>
           <span className="class-data">{data.date}</span>
           <span className="class-data">{data.time}</span>
         </div>
@@ -48,7 +69,7 @@ const UserHistoryItem = ({
           <button
             type="button"
             className="button button-ok"
-            title={`Повторить расчёт для ${data.name}`}
+            title={`${repeatData} ${data.name}`}
             onClick={handleAccept}
           >
             ✔
@@ -58,7 +79,7 @@ const UserHistoryItem = ({
           <button
             type="button"
             className="button button-del"
-            title={`Удалить данные - ${data.name}`}
+            title={`${deleteData} - ${data.name}`}
             onClick={handleDelete}
           >
             ✖
@@ -69,8 +90,10 @@ const UserHistoryItem = ({
         <div>
           <Modal onClose={toggleModalDelete}>
             <div className="btn-block-delete">
-              <Button onClick={handleRecordDelete}>Удалить {data.name}</Button>
-              <Button onClick={toggleModalDelete}>Отменить</Button>
+              <Button onClick={handleRecordDelete}>
+                {btnDelete} {data.name}
+              </Button>
+              <Button onClick={toggleModalDelete}>{btnCancel}</Button>
             </div>
           </Modal>
         </div>
@@ -78,8 +101,8 @@ const UserHistoryItem = ({
       {isShowModal && (
         <div>
           <Modal onClose={toggleModal}>
-            <Result result={dataCalc} />
-            <Button onClick={toggleModal}>Закрыть</Button>
+            <Result result={dataCalc} lang={lang} />
+            <Button onClick={toggleModal}>{btnClose}</Button>
           </Modal>
         </div>
       )}

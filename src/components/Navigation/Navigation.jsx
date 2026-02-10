@@ -36,9 +36,9 @@ function Navigation({ lang, handleLangChange }) {
       </nav>
       <div className={styles.btnCountry}>
         <span
-          className="fi fi-ru"
-          onClick={() => handleLangChange('ru')}
-          title="Русский"
+          className="fi fi-ua"
+          onClick={() => handleLangChange('uk')}
+          title="Українська"
         ></span>
         <span
           className="fi fi-gb"
@@ -49,6 +49,31 @@ function Navigation({ lang, handleLangChange }) {
           className="fi fi-de"
           onClick={() => handleLangChange('de')}
           title="Deutsch"
+        ></span>
+        <span
+          className="fi fi-ru"
+          onClick={() => handleLangChange('ru')}
+          title="Русский"
+        ></span>
+        <span
+          className="fi fi-pl"
+          onClick={() => handleLangChange('pl')}
+          title="Polski"
+        ></span>
+        <span
+          className="fi fi-cz"
+          onClick={() => handleLangChange('cz')}
+          title="Čeština"
+        ></span>
+        <span
+          className="fi fi-fr"
+          onClick={() => handleLangChange('fr')}
+          title="Français"
+        ></span>
+        <span
+          className="fi fi-es"
+          onClick={() => handleLangChange('es')}
+          title="Español"
         ></span>
       </div>
     </div>

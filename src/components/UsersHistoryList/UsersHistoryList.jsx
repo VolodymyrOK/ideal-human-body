@@ -4,14 +4,16 @@ import useLocaleStorage from '../../hooks/useLocalStorage'
 import UserHistoryItem from '../UserHistoryItem/UserHistoryItem'
 import { useState } from 'react'
 import Calculator from '../Calculator/Calculator'
+import GetDataLanguage from '../../hooks/GetDataLanguage'
 
-const UsersHistoryList = () => {
+const UsersHistoryList = ({ lang }) => {
   const [dataList, setDataList] = useLocaleStorage(USER_DATA)
   const [isShowModal, setIsShowModal] = useState(false)
   const [activeItemId, setActiveItemId] = useState()
   const [dataCalc, setDataCalc] = useState([])
   const [isShowModalDelete, setIsShowModalDelete] = useState(false)
   const [activeItemIdDelete, setActiveItemIdDelete] = useState()
+  const { h1History, dataNull } = GetDataLanguage(lang) || {}
 
   const handleAcceptItem = (data) => {
     setActiveItemId(data.id)
@@ -48,7 +50,7 @@ const UsersHistoryList = () => {
 
   return (
     <div className="history-container">
-      <h1 className="history-h1">Данные пользователей</h1>
+      <h1 className="history-h1">{h1History}</h1>
       {dataList.length !== 0 ? (
         <ul>
           {dataList.map((data) => (
@@ -65,12 +67,13 @@ const UsersHistoryList = () => {
               toggleModalDelete={() => toggleModalDelete(data.id)}
               handleRecordDelete={() => recordDelete(data.id)}
               dataCalc={dataCalc}
+              lang={lang}
             />
           ))}
         </ul>
       ) : (
         <div className="data-null">
-          <p>Нет данных</p>
+          <p>{dataNull}</p>
         </div>
       )}
     </div>

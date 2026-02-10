@@ -8,13 +8,20 @@ export default class Modal extends Component {
   componentDidMount() {
     // console.log('Mount Modal')
     window.addEventListener('keydown', this.handleKeyDown)
+    const btnCountry = document.getElementById('btn-country')
+    console.log('btnCountry', btnCountry)
+    btnCountry.style.zIndex = 'auto'
   }
+
   componentDidUpdate() {
     // console.log('Update Modal')
   }
+
   componentWillUnmount() {
     // console.log('Unmount Modal')
     window.removeEventListener('keydown', this.handleKeyDown)
+    const btnCountry = document.getElementById('btn-country')
+    btnCountry.style.zIndex = '999'
   }
 
   handleKeyDown = (e) => {
@@ -30,7 +37,7 @@ export default class Modal extends Component {
       <div className="modal-backdrop" onClick={this.handleBackdropClick}>
         <div className="modal-content">{this.props.children}</div>
       </div>,
-      modalRoot
+      modalRoot,
     ) // рендеринг модального окна в портале
   }
 }

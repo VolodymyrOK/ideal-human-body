@@ -1,4 +1,5 @@
 import './UsersHistoryList.scss'
+import '../UserHistoryItem/UserHistoryItem.scss'
 import { USER_DATA } from '../../constans'
 import useLocaleStorage from '../../hooks/useLocalStorage'
 import UserHistoryItem from '../UserHistoryItem/UserHistoryItem'
@@ -13,7 +14,6 @@ const UsersHistoryList = ({ lang }) => {
   const [dataCalc, setDataCalc] = useState([])
   const [isShowModalDelete, setIsShowModalDelete] = useState(false)
   const [activeItemIdDelete, setActiveItemIdDelete] = useState()
-  const { h1History, dataNull } = GetDataLanguage(lang) || {}
 
   const handleAcceptItem = (data) => {
     setActiveItemId(data.id)
@@ -48,9 +48,51 @@ const UsersHistoryList = ({ lang }) => {
     setDataList((prevState) => prevState.filter((dat) => dat.id !== id))
   }
 
+  const {
+    h1History,
+    dataNull,
+    nameResult,
+    weightHistory,
+    heightHistory,
+    formAge,
+    formGender,
+    dateResult,
+    timeResult,
+  } = GetDataLanguage(lang) || {}
+
   return (
     <div className="history-container">
       <h1 className="history-h1">{h1History}</h1>
+      <ul>
+        <li className="list-item">
+          <div className="data-line">
+            <span>{nameResult}</span>
+          </div>
+          <div className="data-line">
+            <span>{weightHistory}</span>
+          </div>
+          <div className="data-line">
+            <span>{heightHistory}</span>
+          </div>
+          <div className="data-line">
+            <span>{formAge}</span>
+          </div>
+          <div className="data-line">
+            <span>{formGender}</span>
+          </div>
+          <div className="data-line">
+            <span className="class-data">
+              {dateResult}/{timeResult}
+            </span>
+          </div>
+          <div className="data-line">
+            <span></span>
+          </div>
+          <div className="data-line">
+            <span></span>
+          </div>
+        </li>
+      </ul>
       {dataList.length !== 0 ? (
         <ul>
           {dataList.map((data) => (

@@ -17,15 +17,8 @@ const UserHistoryItem = ({
   lang,
 }) => {
   const {
-    nameResult,
-    weightHistory,
-    heightHistory,
-    formAge,
     formMale,
     formFemale,
-    dateResult,
-    timeResult,
-    formGender,
     repeatData,
     deleteData,
     btnDelete,
@@ -36,34 +29,28 @@ const UserHistoryItem = ({
   return (
     <>
       <li className="list-item">
-        <div className="data-line span-line">
-          <span className="title-line">{nameResult}</span>
+        <div className="data-line">
           <span className="class-name">{data.name}</span>
         </div>
-        <div className="data-line span-line">
-          <span className="title-line">{weightHistory}</span>
+        <div className="data-line">
           <span className="class-weight">{data.weight}</span>
         </div>
-        <div className="data-line span-line">
-          <span className="title-line">{heightHistory}</span>
+        <div className="data-line">
           <span className="class-height">{data.height}</span>
         </div>
-        <div className="data-line span-line">
-          <span className="title-line">{formAge}</span>
+        <div className="data-line">
           <span className="class-age">{data.age}</span>
         </div>
-        <div className="data-line span-line">
-          <span className="title-line">{formGender}</span>
+        <div className="data-line">
           <span className="class-gender">
             {data.gender === 'male' ? `${formMale}` : `${formFemale}`}
           </span>
         </div>
-        <div className="data-line time span-line">
-          <span className="title-line">
-            {dateResult}/{timeResult}
+        <div className="data-line time">
+          <span className="class-data">
+            {data.date}/{data.time}
           </span>
-          <span className="class-data">{data.date}</span>
-          <span className="class-data">{data.time}</span>
+          {/* <span className="class-data"></span> */}
         </div>
         <div>
           <button

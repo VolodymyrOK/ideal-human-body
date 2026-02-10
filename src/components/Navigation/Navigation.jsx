@@ -34,7 +34,7 @@ function Navigation({ lang, handleLangChange }) {
           {navUsersdata}
         </NavLink>
       </nav>
-      <div className={styles.btnCountry}>
+      <div className={styles.btnCountry} id="btn-country">
         <span
           className="fi fi-ua"
           onClick={() => handleLangChange('uk')}

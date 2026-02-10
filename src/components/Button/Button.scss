@@ -32,8 +32,9 @@
   }
 }
 
-@media (max-height: 490px) {
+@media (min-width: 361px) and (max-width: 609px) {
   .button-component {
+    margin-top: 10px;
     margin-bottom: 15px;
   }
 }

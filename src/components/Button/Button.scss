@@ -38,3 +38,10 @@
     margin-bottom: 15px;
   }
 }
+
+@media (max-height: 450px) {
+  .button-component {
+    margin-top: 10px;
+    margin-bottom: 15px;
+  }
+}

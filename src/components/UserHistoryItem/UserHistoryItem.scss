@@ -5,13 +5,16 @@
   text-align: right;
   gap: 20px;
   border-bottom: 1px solid #aaa;
+  @media (max-width: 360px) {
+    gap: 8px;
+  }
 }
 
 .data-line {
   display: flex;
   justify-content: space-between;
   & > span {
-    width: 60px;
+    width: 80px;
   }
   &.time {
     display: flex;
@@ -28,23 +31,19 @@
 }
 
 span.class-name {
-  width: 80px;
   color: rgb(44, 46, 46);
 }
 
 span.class-weight,
 .class-height {
-  width: 80px;
   color: rgb(44, 46, 46);
 }
 
 span.class-age {
-  width: 80px;
   color: rgb(44, 46, 46);
 }
 
 span.class-gender {
-  width: 80px;
   color: rgb(2, 65, 2);
 }
 

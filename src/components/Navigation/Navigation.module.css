@@ -1,8 +1,9 @@
 .navContainer {
   display: flex;
+  gap: 5px;
 }
 .navigation {
-  margin: 25px auto;
+  margin: 8px auto;
   max-width: 1200px;
   display: flex;
   justify-content: center;
@@ -45,7 +46,7 @@
 .btnCountry {
   display: flex;
   justify-content: center;
-  gap: 10px;
+  gap: 8px;
   z-index: 999;
   & > span {
     cursor: pointer;
@@ -55,5 +56,6 @@
 @media (max-width: 768px) {
   .navContainer {
     flex-direction: column;
+    gap: 10px;
   }
 }

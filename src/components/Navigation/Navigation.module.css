@@ -1,6 +1,7 @@
 .navContainer {
   display: flex;
   gap: 5px;
+  margin: auto 15px;
 }
 .navigation {
   margin: 8px auto;

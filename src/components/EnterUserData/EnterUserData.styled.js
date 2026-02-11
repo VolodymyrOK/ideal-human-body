@@ -39,13 +39,19 @@ export const FormContainer = styled(Form)`
 export const FormLabel = styled.label`
   display: flex;
   justify-content: space-between;
-  width: 242px;
+  width: 320px;
   font-size: 18px;
+  @media (max-width: 420px) {
+    width: 242px;
+  }
   & > div {
     text-align: right;
   }
   & > div > input {
-    width: 100px;
+    width: 115px;
+    @media (max-width: 420px) {
+      width: 100px;
+    }
   }
   &:last-of-type > div > input {
     cursor: pointer;
